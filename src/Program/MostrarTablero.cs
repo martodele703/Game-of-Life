@@ -6,11 +6,11 @@ namespace Ucu.Poo.GameOfLife;
 
 public class MostrarTablero
 {
-    public void imprimirTablero(Tablero tablero)
+    public void imprimirTablero(bool[,] tablero)
     {
-        bool[,] b = tablero.; //variable que representa el tablero
-        int width = tablero.Width; //variabe que representa el ancho del tablero
-        int height = tablero.Hight;//variabe que representa altura del tablero
+        bool[,] b = tablero; //variable que representa el tablero
+        int width = tablero.GetLength(0); //variabe que representa el ancho del tablero
+        int height = tablero.GetLength(1);//variabe que representa altura del tablero
         Console.Clear();
         StringBuilder s = new StringBuilder();
         for (int y = 0; y<height;y++)

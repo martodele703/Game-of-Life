@@ -7,9 +7,10 @@ namespace Ucu.Poo.GameOfLife;
 
 public class Game
 {
-    public void startGame() {    
-        
-        bool[,] gameBoard = 
+    public bool[,] startGame(bool[,] tablero)
+    {
+
+        bool[,] gameBoard = tablero;
         int boardWidth = gameBoard.GetLength(0);
         int boardHeight = gameBoard.GetLength(1);
 
@@ -55,6 +56,7 @@ public class Game
                 }
             }
         }
-        gameBoard = cloneboard; 
+        gameBoard = cloneboard;
+        return gameBoard;
     }
 }
