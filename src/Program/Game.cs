@@ -7,6 +7,7 @@ namespace Ucu.Poo.GameOfLife;
 
 public class Game
 {
+    /*Funcion encargada de correr el juego, recibe el tablero donde jugar como parametro*/
     public bool[,] startGame(bool[,] tablero)
     {
 

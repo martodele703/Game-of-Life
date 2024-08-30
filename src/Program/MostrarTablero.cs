@@ -6,6 +6,7 @@ namespace Ucu.Poo.GameOfLife;
 
 public class MostrarTablero
 {
+    /*Funcion encargada de imprimir en consola un tablero pasado como parametro*/
     public void imprimirTablero(bool[,] tablero)
     {
         bool[,] b = tablero; //variable que representa el tablero

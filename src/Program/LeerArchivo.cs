@@ -4,6 +4,8 @@ namespace Ucu.Poo.GameOfLife;
 
 public class LeerArchivo
 {
+    /*Funcion encargada de crear la matriz booleana a partir de un archivo txt
+      La ruta al archivo se pasa como parametro*/
     public bool[,] crearTablero(string ruta)
     {
         string url = ruta;
