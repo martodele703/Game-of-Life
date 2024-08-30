@@ -7,6 +7,8 @@ namespace Ucu.Poo.GameOfLife
         static void Main(string[] args)
         {
             Consultar consulta = new Consultar();
+            
+            
             string ruta = @"C:\Repos\Game-of-Life\assets\board.txt";
             LeerArchivo leerArchivo = new LeerArchivo();
             bool[,] matriz = leerArchivo.crearTablero(ruta);

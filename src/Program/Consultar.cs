@@ -5,49 +5,17 @@ namespace Ucu.Poo.GameOfLife;
 
 public class Consultar
 {
-    private string path;
-    private int generations;
+    private GameParameters parameters;
 
-    public string Path
+    public GameParameters Parameters
     {
-        get { return path; }
-        set
-        {
-            if (value is string)
-            {
-                path = value;
-            }
-        }
-    }
-    
-    public int Generations
-    {
-        get { return generations; }
-        set
-        {
-            if (value > 0)
-            {
-                generations = value;
-            }
-        }
+        get { return parameters; }
+        set { parameters = value; }
     }
 
-    public void consultar()
+    public string consultar()
     {
-        Console.WriteLine("Introduzca la ruta a su autómata celular: ");
-        // Leer la entrada del usuario desde la consola y guardarla en nombre
-        string ruta = Console.ReadLine();
-        
-        Console.WriteLine("Introduzca la cantidad de generaciones: ");
-        string genString = Console.ReadLine();
-        
-        // Transformar a int lo leido en consola
-        int genInt = int.Parse(genString);
-    }
-
-    public Consultar()
-    {
-        string selector = "";
+        string selector = string.Empty;
 
         // Bucle que sigue pidiendo entrada hasta que el usuario ingrese un valor válido
         while (selector != "1" && selector != "2" && selector != "0")
@@ -65,17 +33,27 @@ public class Consultar
                 Console.WriteLine("Ingrese un valor correcto: 1, 2 o 0.");
             }
         }
+
+        // Manejo de la opción seleccionada
         if (selector == "1")
         {
-            
-        } else if (selector == "2")
-        {
-            
-        }
-        else
-        {
-            Console.WriteLine("Ingrese un valor correcto");
-        }
+            Console.WriteLine("Introduzca la ruta a su autómata celular: ");
+            // Leer la entrada del usuario desde la consola y guardarla en nombre
+            string ruta = Console.ReadLine();
         
+            Console.WriteLine("Introduzca la cantidad de generaciones: ");
+            string genString = Console.ReadLine();
+        
+            // Transformar a int lo leido en consola
+            int genInt = int.Parse(genString);
+
+            parameters.Path = ruta;
+            parameters.Generations = genInt;
+            return selector;
+        }
+        else if (selector == "0")
+        {
+            Console.WriteLine("Has seleccionado la opción 0: Salir.");
+        }
     }
 }
